@@ -3,7 +3,7 @@ import authReducer from './authSlice';
 
 const store = configureStore({
   reducer: {
-    auth: authReducer, // Quản lý trạng thái xác thực
+    auth: authReducer,
   },
 });
 

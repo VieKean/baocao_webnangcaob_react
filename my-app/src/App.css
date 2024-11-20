@@ -36,3 +36,30 @@
     transform: rotate(360deg);
   }
 }
+.breadcrumb {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #F5F5F5;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: "›";
+  padding: 0 8px;
+  color: gray;
+}
+
+.breadcrumb-item a {
+  text-decoration: none;
+  color: gray;
+}
+
+.breadcrumb-item a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb-item.active {
+  color: gray;
+  pointer-events: none;
+}

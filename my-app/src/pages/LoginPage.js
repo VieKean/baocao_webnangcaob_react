@@ -13,24 +13,24 @@ const LoginPage = () => {
     try {
       const response = await api.post('/login', values); // Gọi API đăng nhập
       const { token, user } = response.data;
-      
-
-      // Lưu token vào localStorage
+  
+      // Lưu token và thông tin user vào localStorage
       localStorage.setItem('token', token);
-
+      localStorage.setItem('user', JSON.stringify(user)); // Lưu thông tin user dưới dạng chuỗi JSON
+  
       // Dispatch thông tin người dùng vào Redux
       dispatch(login({ token, user }));
-
+  
       // Hiển thị thông báo thành công
       message.success('Đăng nhập thành công!');
-
-      // Điều hướng sang dashboard
-      
+  
+      // Điều hướng sang trang chính
       navigate('/');
     } catch (error) {
       message.error('Đăng nhập thất bại! Vui lòng kiểm tra lại tài khoản và mật khẩu.');
     }
   };
+  
 
   return (
     <div style={{ maxWidth: 400, margin: '100px auto', padding: 20, border: '1px solid #ddd', borderRadius: 8 }}>
