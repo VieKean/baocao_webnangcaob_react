@@ -5,6 +5,7 @@ import RegisterPage from './pages/RegisterPage';
 import HomePage from './pages/HomePage';
 import ProductDetailPage from './pages/ProductDetailPage';
 import ProductPage from './pages/ProductPage';
+import CheckOutPage from './pages/CheckOutPage';
 import PrivateRoute from './components/PrivateRoute'; // Route bảo vệ
 
 export const router = createBrowserRouter([
@@ -41,6 +42,16 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <ProductPage />
+          </PrivateRoute>
+        ),
+      }
+
+      ,
+      {
+        path: "/checkout",
+        element: (
+          <PrivateRoute>
+            <CheckOutPage />
           </PrivateRoute>
         ),
       }
